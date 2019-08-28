@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <script>
+            //função anônima e autoexecutável
+            (function(){
+            
+            //função que calcula a média de n números
+            function calculaMedia() {
+                var total = 0;
+                var qtdeNumeros = arguments.length; 
+                var x = 0
+
+                while (typeof arguments[x] === 'number') {
+                    total += arguments[x];
+                    x++;
+                }
+
+                return total / qtdeNumeros; 
+            };
+
+            //variáveis de escopo local
+            var media01 = calculaMedia(5,10,15,20,30);            
+            var media02 = calculaMedia(0,2,4,6,8,10,12,14,16,18,20);
+
+            console.log('media01: ', media01); 
+            console.log('media02: ', media02);  
+            
+            })();       
+            
+        </script>
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>        
+    </body>
+</html>
