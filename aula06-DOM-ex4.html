@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>
+
+        <div> 
+            <input type="text" id="txtNome" value="informe o nome">
+        </div>
+        
+        
+        <script>
+
+            // Aula 06 - DOM - Exercício 04
+
+            //Uso da propriedade value para recuperar e atribuir valor em um campo de formulário. 
+            //Dica 1: tanto as propriedades: .value, .textContent e .innerHTML servem para definir um novo valor ou recuperar o valor atual. 
+            //Dica 2: Tudo que é recuperado pelo JS de um elemento HTML da página é do tipo string, mesmo um número digitado em um campo de formulário é uma string. 
+
+            var $inputNome = document.querySelector("#txtNome");
+            
+            // Exemplo para obter/recuperar o valor de um input
+            console.log("$inputNome: ", $inputNome.value);
+
+            var nome = "Rodrigo ";
+            var sobrenome = "Gonzaga";
+
+            // Exemplo para definir/atribuir um valor em um input
+            $inputNome.value = nome + sobrenome; 
+            $inputNome.disabled = true;
+
+            
+            
+        </script>
+        
+    </body>
+</html>
