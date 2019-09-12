@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>
+
+        <div> 
+            <input type="text" id="txtNome" value="informe o nome">
+        </div>
+        
+        
+        <script>
+
+            // Aula 06 - DOM - Exercício 04 - Continuação
+            // Exemplo de uso da propriedade readOnly 
+
+            /*
+            Relação entre atributos HTML e propriedades JavaScript
+
+            atributo no HTML     |  propriedade no Javascript
+
+            for                  |  forhtml
+
+            class                |  className
+
+            readonly             |  readOnly
+
+            maxlength            | maxLength
+
+            cellspacing          |  cellSpacing
+
+            rowspan              |  rowSpan
+
+            colspan              |  colSpan
+
+            tabindex             |  tabIndex
+
+            cellpadding          |  cellPadding
+
+            contenteditable      |  contentEditable
+
+            frameborder          |  frameBorder
+
+            usemap               |  useMap
+
+            */
+
+            var $inputNome = document.querySelector("#txtNome");
+            
+            // Exemplo para obter/recuperar o valor de um input
+            console.log("$inputNome: ", $inputNome.value);
+
+            var nome = "Rodrigo ";
+            var sobrenome = "Gonzaga";
+
+            // Exemplo para definir/atribuir um valor em um input
+            $inputNome.value = nome + sobrenome; 
+
+            // Exemplo para definir/atribuir true para o atributo readonly de um input 
+            $inputNome.readOnly = true;
+
+            
+            
+        </script>
+        
+    </body>
+</html>
