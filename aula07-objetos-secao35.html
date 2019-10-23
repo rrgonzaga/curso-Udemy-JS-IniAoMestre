@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">         
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+        </div>
+               
+        
+
+        <script src="js/beluga.js"></script>
+
+        <script>
+        	
+            // Seção 07: Objetos, aula 35. Objetos customizados, propriedades e métodos
+
+            /* 
+                - Criação de objeto de forma literal; 
+            
+            */
+
+            console.log('');
+            console.log("############## Seção 07: Objetos, aula 35 #######################"); 
+
+            var caneta1 = {
+                cor: 'red', 
+                mudaCor: function(cor) {
+                    //debugger
+                    this.cor = cor;
+                }
+            }
+
+            caneta1.mudaCor('black');
+            console.log(caneta1);
+
+        </script>
+        
+    </body>
+</html>
