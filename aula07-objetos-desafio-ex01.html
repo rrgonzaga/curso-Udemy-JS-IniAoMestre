@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">         
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+        </div>           
+        
+
+        <script src="js/beluga.js"></script>
+
+        <script>
+        	
+            // Seção 07: desafio - exercício 01
+
+            /* 
+                - Criando objetos literais e imprimindo no console.log suas propriedades.
+            */
+
+            console.log('');
+            console.log("############## Seção 07: desafio, exercício 01 #######################"); 
+
+            var pessoa1 = {
+                nome: "Rodrigo", 
+                sobrenome: "Gonzaga"
+            }
+
+            var pessoa2 = {
+                nome: "Juliana", 
+                sobrenome: "Gonzaga"
+            }
+
+            var pessoa3 = {
+                nome: "Enzo", 
+                sobrenome: "Gonzaga"
+            }
+
+            for(i = 1; i < 4; i++) {
+                console.log(window['pessoa'+i].nome + ' ' + window['pessoa'+i].sobrenome);
+            }
+            
+            
+
+        </script>
+        
+    </body>
+</html>
