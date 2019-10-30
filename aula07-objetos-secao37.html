@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">         
+
+    </head>
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+        </div>
+               
+        
+
+        <script src="js/beluga.js"></script>
+
+        <script>
+        	
+            // Seção 07: Objetos, aulas 37. O problema de não utilizar o operador new e como impedir que ele ocorra
+
+            /* 
+                - O problema de não utilizar o operador new e como impedir que ele ocorra;
+            */
+
+            console.log('');
+            console.log("############## Seção 07: Objetos, aula 37 #######################"); 
+
+            
+            var Caneta = (function(){  
+                'use strict'
+                console.log(this);              
+                
+                function _caneta(preco) {
+
+                    console.log(this);
+                    //privado
+                    var color = "black"; // cor padrão. 
+                    
+                    //público
+                    this.preco = preco || 1;
+                    this.mudarCor = function(cor) {
+                        if(cor !== 'red' && cor !== 'blue' && cor !== 'black') {
+                            return;
+                        }
+                        color = cor;
+                    }
+                    this.pegaCor = function() {
+                        return color;
+                    }                 
+
+                }
+
+                return _caneta;
+
+            })();
+
+        </script>
+        
+    </body>
+</html>
