@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            
+            <button id="btn1" onclick="clicar()">botao 1</button>
+            <button id="btn2">botao 2</button>
+            <button id="btn3">botao 3</button>
+        </div>        
+        
+        <script>
+
+            // Seção 08: aula 41. DOM level 0 vs DOM level 2
+
+            /* 
+                - Adicionando manipulador de eventos DOM nível 0. OBS.: ver btn1
+                - Adicionando manipulador de eventos DOM nível 2. OBS.: ver btn3
+            */
+
+            console.log('');
+            console.log("############## Seção 07: Objetos, aula 41 #######################");
+            
+            var btn2 = document.getElementById('btn2');
+            var btn3 = document.getElementById('btn3');
+            
+            btn2.onclick = clicar;
+            
+            function clicar(){
+                alert('clicou');
+                
+                return function(){
+                    alert('clicou 2');
+                }
+            }
+
+            btn3.addEventListener("click", function() {
+                alert("clicou com DOM level 2");
+            });
+
+            
+            
+        </script>
+        
+    </body>
+</html>
