@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+            
+            <button id="btn1" onclick="clicar()">botao 1</button>
+            <button id="btn2" onclick="alert('onclick como atributo de btn2');" >botao 2</button>
+            <button id="btn3">botao 3</button>
+        </div>
+
+        <div class="container">
+            <h1>Propagação de eventos</h1>
+
+            <div id="d1" style="background: red; padding: 25px;">
+                Texto dentro da div
+                <span style="background: yellow;">Texto dentro da span</span>
+            </div>
+        </div>
+        
+        <script>
+
+            // Seção 08: aula 42. Propagação de eventos
+
+            /* 
+                - Propagação: É a capacidade dos eventos de percorrerem a estrutura do HTML, desde o elemento 
+                original que disparou o evento até o nível mais alto (numa página web é o elemento body). A propagação é no sentido de baixo (elemento que disparou o evento) para cima, até o nível mais alto. 
+            */
+
+            console.log('');
+            console.log("############## Seção 07: Objetos, aula 42 #######################");
+            
+            var $d1 = document.querySelector("#d1"); 
+            var $d1Span = document.querySelector("#d1 span");
+
+            $d1.addEventListener("click", function() {
+                console.log("clicou no $d1");
+            }, false);
+
+            $d1Span.addEventListener("dblclick", function() {
+                console.log("clicou no $d1Span");
+            }, false);
+
+            document.addEventListener("click", function() {
+                console.log("clicou no document");
+            }, false);
+            
+            
+            
+        </script>
+        
+    </body>
+</html>
