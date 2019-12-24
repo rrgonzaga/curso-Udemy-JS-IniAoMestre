@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+            <form action="#" method="POST">
+                <div>
+                    <label for="txtUser">Usuário</label>
+                    <br>
+                    <input type="text" id="txtUser" name="user">                
+                </div>
+                <div>
+                    <label for="txtPass">Senha</label>
+                    <br>
+                    <input type="text" id="txtPass" name="pass">                
+                </div>
+                <br>
+                <div>
+                    <button type="submit" id="btn">Enviar</button>
+                </div>
+            </form>
+            
+        
+        </div>
+
+       
+        
+        <script>
+
+            // Seção 08: aula 46. Validar formulário de login através do evento submit 
+            
+            /* 
+                - Criação de uma função autoinvocável para não poluir o escopo global; 
+                - Validação de preenchimento de campos do tipo input com o uso da propriedade value; 
+                - Boolean("") = false; Boolean("x") = true; Boolean("false") = true;
+                - Associando a escuta do evento submit ao elemento formulário;
+                - Evitando o comportamento padrão de um evento através da função preventDefault();
+                - Uso do atributo method="POST" da tag form para envio dos dados do formulário no corpo da página 
+                e não na URL. 
+            */
+
+            console.log('');
+            console.log("############## Seção 08: Objetos, aula 46 #######################");
+
+            (function(){
+                'use strict'
+                var $form = document.querySelector("form");
+                var $txtUser = document.getElementById("txtUser");
+                var $txtPass = document.getElementById("txtPass");
+                var $btn = document.getElementById("btn");
+
+                $form.addEventListener("submit",function(e){
+                    if(!$txtUser.value || !$txtPass.value) {
+                        alert("Preencha todos os campos");
+                        e.preventDefault();
+                    }
+
+                });
+
+
+            })();
+            
+            
+            
+            
+        </script>
+        
+    </body>
+</html>
