@@ -10,7 +10,7 @@
         <div class="container">
             <h1>Curso Javascript Completo 2018</h1>
 
-            <textarea id="msg"></textarea>
+            <textarea id="msg" cols="50" rows="10"></textarea>
             
         
         </div>
@@ -19,17 +19,20 @@
         
         <script>
 
-            // Seção 08: aula 47. Textarea - contador de caracter, parte 1 
+            // Seção 08: aula 48. Textarea - contador de caracter, parte 2 
 
             /* 
                 - Criação de uma função autoinvocável para não poluir o escopo global; 
                 - Associando eventos a funções nomeadas em vez de asssociar a funções anônimas;
                 - Conhecendo os eventos de teclado keydown, keypress e keyup.
+                - O evento keypress só é disparado quando pressionamos uma tecla de número ou de letra ou 
+                de pontuação. Se pressionarmos a tecla delete, por exemplo, este evento não é disparado. 
+                - Resolvendo o problema de copiar/colar um texto dentro de um textarea através do evento input.
                  
             */
 
             console.log('');
-            console.log("############## Seção 08: Objetos, aula 47 #######################");
+            console.log("############## Seção 08: Objetos, aula 48 #######################");
 
             (function(){
                 'use strict'
@@ -38,21 +41,23 @@
                 $msg.addEventListener("keypress", keypress);
                 $msg.addEventListener("keyup", keyup);
                 $msg.addEventListener("keydown", keydown);
+                $msg.addEventListener("input", input);
 
                 function keypress(e) {
-                    console.log('keypress: ',this.value);
+                    console.log('keypress event: ',this.value);
                 }
 
                 function keyup(e) {
-                    console.log('keyup: ',this.value);
+                    console.log('keyup event: ',this.value);
                 }
 
                  function keydown(e) {
-                    console.log('keydown: ',this.value);
+                    console.log('keydown event: ',this.value);
                 }
 
-
-
+                function input(e) {
+                    console.log("input event: ", this.value);
+                }
 
             })();
             
