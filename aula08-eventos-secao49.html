@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+            <textarea id="msg" cols="50" rows="10"></textarea>
+            <br>
+            Restam <span id="resta"></span> caracteres. 
+            
+        
+        </div>
+
+       
+        
+        <script>
+
+            // Seção 08: aula 49. Textarea - contador de caracter, parte 3 
+
+            /* 
+                - Criação de uma função autoinvocável para não poluir o escopo global; 
+                - Associando eventos a funções nomeadas em vez de asssociar a funções anônimas;
+                - Resolvendo o problema de copiar/colar um texto dentro de um textarea através do evento input.
+                 
+            */
+
+            console.log('');
+            console.log("############## Seção 08: Objetos, aula 49 #######################");
+
+            (function(){
+                'use strict'
+
+                var maxima = 100;
+
+                var $msg = document.getElementById("msg");
+                var $resta = document.getElementById("resta");
+
+                $resta.textContent = maxima;
+
+                $msg.addEventListener("input", checklength);
+
+                function checklength(e) {
+                    var qtdeCaracteresDigitados = this.value.length;
+                    $resta.textContent = maxima - qtdeCaracteresDigitados;                    
+                }
+
+            })();
+            
+            
+            
+            
+        </script>
+        
+    </body>
+</html>
