@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">    
+
+        <style>
+            .taskDone {
+                text-decoration: line-through;
+                color: #555;
+            }
+        </style>
+
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+            <div style="margin-bottom: 5px;">
+                <input type="text" id="txtTask">
+            </div>
+            <div>                
+                <button id="btnCadastrar">Cadastrar</button>
+            </div>
+
+            <ul>
+                <li>Estudar JavaScript - DOM</li>
+                <li>Estudar JavaScript - eventos</li>
+                <li>Jogar vídeo-game</li>
+            </ul>                     
+        
+        </div>      
+        
+        <script>
+
+            // Seção 08: aula 57. Lista de Tarefas - parte 4
+            /*
+                - Problema do uso da função innerHTML: Ao utilizá-la, a parte do DOM vinculada ao HTML que está sendo redefinido, o DOM também é redefinido perdendo todos os listeners, por exemplo. 
+                - Substituição do uso da função innerHTML pelas funções: document.createElement 
+                e document.createTextNode.
+                - Uso do método appendChild para acrescentar no final do elemento pai 
+                um novo elemento filho. 
+            */
+
+            console.log('');
+            console.log("############## Seção 08: Objetos, aula 57 #######################");
+
+            (function(){
+                'use strict'; 
+                var $ul = document.querySelector("ul");
+                var $lis = $ul.querySelectorAll("li");
+                var $txtTask = document.querySelector("#txtTask");
+                var $btnCadastrar = document.querySelector("#btnCadastrar");
+
+                function addTask() {                   
+                    
+                    var li = document.createElement('li');
+                    var text = document.createTextNode($txtTask.value);
+
+                    li.appendChild(text);
+                    li.addEventListener("click", toogleDone);
+
+                    $ul.appendChild(li);
+
+                    $txtTask.value='';
+                    $txtTask.focus();
+                }
+
+                function toogleDone() {
+                    //debugger;
+                    this.classList.toggle("taskDone");
+                    
+                }
+
+                for(var i = 0; i < $lis.length; i++) {
+                    $lis[i].addEventListener("click", toogleDone);
+                }
+
+                $btnCadastrar.addEventListener("click", addTask);   
+                $txtTask.addEventListener("keyup", function(e){
+                    //console.log("key code: ", e.keyCode);
+                    if(e.keyCode === 13) {
+                        //console.log("Pressionei a tecla Enter");
+                        addTask();
+                    }
+                });             
+
+            })();
+            
+        </script>
+        
+    </body>
+</html>
