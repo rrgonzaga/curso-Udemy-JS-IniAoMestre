@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="js ">
+<html lang="en" class="no-js ">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
@@ -86,31 +86,7 @@
     </div>
 </footer>
 
-<script>
-
-    // Seção 08: aula 61. Exercício desafio (Minha versão da implementação)
-    /*
-        - Implementar o comportamento correto do menu hamburguer.         
-    */    
-
-    (function(){
-
-        'use strict';
-        var $html = document.querySelector("html");
-        var $imgMenuHamburguer = document.getElementById("img-menu-hamburguer");
-        //console.log("tag HTML: ", $html);
-
-        function toogleMenu() {
-            //alert("cliquei no menu");
-            $html.classList.toggle("menu-opened");
-        }
-
-        $imgMenuHamburguer.addEventListener("click", toogleMenu);
-
-    })();
-
-</script>
-   
+<script type="text/javascript" src="javascript/menu.js"></script>   
 
 </body>
 </html>
