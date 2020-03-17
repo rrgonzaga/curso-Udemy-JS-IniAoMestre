@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">    
+
+        <style>
+            .taskDone {
+                text-decoration: line-through;
+                color: #555;
+            }
+        </style>
+
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018 - Exercício Extra</h1>
+
+            <div style="margin-bottom: 5px;">
+                <input type="text" id="txtTask">
+            </div>
+            <div>                
+                <button id="btnCadastrar">Cadastrar Tarefa</button>
+            </div>
+            <br>
+
+            <table id="tabTasks" border="1px">
+                <thead>
+                    <tr >
+                        <td>Codigo</td>
+                        <td>Tarefa</td>
+                        <td>Ação</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01</td>
+                        <td>Estudar JavaScript - DOM</td>
+                        <td><button data-id="01">excluir</button></td>                        
+                    </tr>
+                    <tr>
+                        <td>02</td>
+                        <td>Estudar JavaScript - eventos</td>
+                        <td><button data-id="02">excluir</button></td>                        
+                    </tr>
+                    <tr>
+                        <td>03</td>
+                        <td>Jogar vídeo-game</td>
+                        <td><button data-id="03">excluir</button></td>                        
+                    </tr>                    
+                </tbody>
+            </table>                           
+        
+        </div>      
+        
+        <script>
+
+            // Seção 08: exercício extra. Tabela de Tarefas
+            /*
+                - Criação de uma tabela de tarefas.
+                - Para remover qualquer elemento do DOM, o processo é sempre o mesmo. Acessar o elemento pai
+                e depois remover o elemento filho desejado a partir do elemento pai. 
+                - Para acessar o elemento pai a partir de um elemento filho, usar a propriedade parentNode. 
+                Ex.: li.parentNode.  
+                - Para excluir um elemento filho estando no elemento pai, usar a função removeChild(<<node>>). 
+                Ex.: li.parentNode.removeChild(li);
+                
+            */
+
+            console.log('');
+            console.log("############## Seção 08: Objetos, Exercício Extra #######################");
+
+            (function(){
+                'use strict'; 
+                var $tbody = document.querySelector("tbody");
+                var $trs = $tbody.querySelectorAll("tr");
+                var $txtTask = document.querySelector("#txtTask");
+                var $btnCadastrar = document.querySelector("#btnCadastrar");
+
+                function addTask() {                   
+                    //debugger;
+                    var insertedText = $txtTask.value;
+
+                    if(insertedText.trim().length > 0){  
+
+                        var tr = document.createElement("tr")
+                        var td1 = document.createElement("td");
+                        var td2 = document.createElement("td"); 
+                        var td3 = document.createElement("td"); 
+                        var btnExcluir = document.createElement("button"); 
+
+
+                        var textTd1 = document.createTextNode("04");
+                        var textTd2 = document.createTextNode(insertedText);
+                        var textButtonExcluir = document.createTextNode("Excluir"); 
+
+                        // var attrBtnExcluir = document.createAttribute("data-id");
+                        // attrBtnExcluir.value = "04";
+                        // btnExcluir.setAttributeNode(attrBtnExcluir);
+
+                        btnExcluir.appendChild(textButtonExcluir);
+
+                        btnExcluir.setAttribute("data-id", "04");
+
+                        td1.appendChild(textTd1);
+                        td2.appendChild(textTd2);
+                        td3.appendChild(btnExcluir);
+
+                        tr.appendChild(td1);
+                        tr.appendChild(td2);
+                        tr.appendChild(td3);
+
+                        $tbody.prepend(tr);
+                    }                    
+
+                    $txtTask.value='';
+                    $txtTask.focus();
+                }
+
+                function removeTask(li){
+                    if(confirm("Deseja realmente excluir a tarefa \n"+ li.textContent + "?")){
+                        console.log("li.parentNode: ", li.parentNode);
+                        li.parentNode.removeChild(li);
+                    }
+                }
+
+                // $ul.addEventListener("click", function(e){
+                //     console.log("e.target.nodeName: ", e.target.nodeName);
+                //     if(e.target.nodeName === 'LI') {                      
+                //         removeTask(e.target);
+                //     }
+                // });                               
+
+                $btnCadastrar.addEventListener("click", addTask);   
+                $txtTask.addEventListener("keyup", function(e){
+                    //console.log("key code: ", e.keyCode);
+                    if(e.keyCode === 13) {
+                        //console.log("Pressionei a tecla Enter");
+                        addTask();
+                    }
+                });             
+
+            })();
+            
+        </script>
+        
+    </body>
+</html>
