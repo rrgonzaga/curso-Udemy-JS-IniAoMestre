@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+            <section id="paragrafos">
+
+                <!-- <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
+                <p>Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado.</p>
+                <p>Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p> -->
+
+                <p>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI.</p>
+                <p>Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado.</p>
+                <p>Se popularizou na década de 60, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+
+            </section>
+
+        </div>
+
+       
+        
+        <script>
+
+            // Aula 10: Aula 10, seção 66 - Desafio  
+
+            /* 
+                - Desafio: Selecionar todos os parágrafos de uma página e, se o texto tiver mais que 200 caracteres, 
+                mostrar somente os duzentos primeiros seguidos de reticencias. 
+            */
+
+            console.log('');
+            console.log("############## Aula 10, seção 66 - Desafio #######################");
+
+            (function(){
+                'use strict'
+
+                var $paragrafos = document.querySelectorAll("p");
+                var reticencias = " ..."; 
+
+                console.log("paragrafos", $paragrafos);
+
+                var novoParagrafo;
+                var lengthTextContent = 0;
+                var textContent = ""; 
+
+                for(var i = 0; i < $paragrafos.length; i++) {
+                    if(i === 0) {
+                        textContent += $paragrafos[i].textContent;
+                    } else {
+                        textContent += " " + $paragrafos[i].textContent;
+                    }
+                    
+                    lengthTextContent += textContent.length;
+                    console.log("$paragrafos[" + i + "]: ", textContent);
+                    console.log("$paragrafos[" + i + "].length: ",lengthTextContent );                    
+
+                    if(lengthTextContent > 200){
+                        novoParagrafo = textContent.substring(0,200) + reticencias;
+                        break;
+                    }
+                }
+
+                document.querySelector("#paragrafos").innerHTML = ""; 
+
+                var secaoParagrafos = document.querySelector("#paragrafos"); 
+                var $p = document.createElement("p");
+                var textNode = document.createTextNode(novoParagrafo);
+                $p.appendChild(textNode);
+
+                document.querySelector("#paragrafos").appendChild($p);
+                
+            })();
+            
+            
+        </script>
+        
+    </body>
+</html>
