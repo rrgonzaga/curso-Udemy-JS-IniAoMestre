@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">      
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+             
+            
+        
+        </div>
+
+       
+        
+        <script>
+
+            // Aula 10: Aula 10, seção 65 - Formatar nome completo  
+
+            /* 
+                - Formatando nome completo apresentando o último nome + "," + restante do nome. Ex.: 
+                Morales, Daniel Tapias.    
+                - Uso da função lastIndexOf('<< caracter ou palavra a ser procurada>>'). Retorna o índice da última ocorrência do caracter ou palavra passada por parâmetro. Caso não seja encontrada, retorna -1; 
+                - Uso da função slice(start, end). O caracter que representa o índice da posição start é incluído no retorno mas o caracter que representa o índice da posição do end não é. 
+            */
+
+            console.log('');
+            console.log("############## Aula 10, seção 65 - Formatar nome completo #######################");
+
+            (function(){
+                'use strict'
+                // var nome = "Daniel Tapias Morales"; 
+                var nome = "Rodrigo"; 
+
+                var nomeFormatado = formatarNome(nome); 
+                console.log("nomeFormatado", nomeFormatado);
+                
+                function formatarNome(nome) {
+                    
+                    var posicaoUltimoEspaco = nome.lastIndexOf(' ');    
+                    console.log("posicaoUltimoEspaco: ", posicaoUltimoEspaco);                
+                    
+                    //debugger;
+                    if(posicaoUltimoEspaco < 1) {
+                        return nome;
+                    }
+
+                    var ultimoNome = nome.slice(posicaoUltimoEspaco + 1);
+                    console.log("ultimoNome: ", ultimoNome);
+
+                    var primeiroNome = nome.slice(0,posicaoUltimoEspaco);
+                    console.log("primeiroNome: ", primeiroNome);
+
+                    return ultimoNome + ", " + primeiroNome;
+                }
+
+                
+
+            })();
+            
+            
+            
+            
+        </script>
+        
+    </body>
+</html>
