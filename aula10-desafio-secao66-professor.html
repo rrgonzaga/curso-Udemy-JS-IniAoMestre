@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">    
+
+        <script>
+
+            // Aula 10: Aula 10, seção 66 - Desafio - Solução professor 
+
+            /* 
+                - Desafio: Selecionar todos os parágrafos de uma página e, se o texto tiver mais que 200 caracteres, 
+                mostrar somente os duzentos primeiros seguidos de reticencias. 
+                - Uso da função innerHTML em vez da função textContent para preservar as formatações dos parágrafos, quando houver. 
+                - Uso da função substring(start, end). O caracter que representa o índice da posição start é incluído no retorno mas o caracter que representa o índice da posição do end não é. 
+            */
+
+            console.log('');
+            console.log("############## Aula 10, seção 66 - Desafio - Solução professor #######################");
+
+            (function(){
+
+                //Executará a função init só depois que toda a página carregar
+                window.addEventListener('load', init); 
+
+                function init(){
+
+                    var $paragrafos = document.querySelectorAll("p");
+                    var x = 0; 
+                    while($paragrafos[x]){
+                        $paragrafos[x].innerHTML = formatarTexto($paragrafos[x].innerHTML);
+                        x++;
+                    };
+
+                    function formatarTexto(texto) {
+
+                        var numMaxCaracteres = 200;
+
+                        if(texto.length <= numMaxCaracteres) {                            
+                            return texto;
+                        }
+
+                        var subTexto = texto.substring(0,numMaxCaracteres);
+                        //console.log("total de caracteres: ", subTexto.length);
+                        return subTexto + "...";
+                    }
+                }
+
+            })()        
+                        
+        </script>  
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+            <section id="paragrafos">
+
+                <p>Lorem Ipsum <b>é simplesmente uma simulação de texto da indústria tipográfica e de impressos</b>, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</p>
+
+                <p><i>Lorem Ipsum</i> sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado.</p>
+
+                <p>Se popularizou na <u>década de 60</u>, quando a Letraset lançou decalques contendo passagens de Lorem Ipsum, e mais recentemente quando passou a ser integrado a softwares de editoração eletrônica como Aldus PageMaker.</p>
+
+            </section>
+
+        </div>
+
+       
+        
+
+        
+    </body>
+</html>

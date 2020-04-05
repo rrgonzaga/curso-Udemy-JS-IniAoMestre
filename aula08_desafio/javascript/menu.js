@@ -1,4 +1,4 @@
-// Seção 08: aula 63. Usar JavaScript para melhorar a acessibilidade do hamburguer menu
+// Seção 09: aula 63. Usar JavaScript para melhorar a acessibilidade do hamburguer menu
 /*
     - Deixar o hamburguer menu mais acessível usando atributos ARIA (aria-controls e aria-expanded).
     - Uso das funções getAttribute e setAttribute
