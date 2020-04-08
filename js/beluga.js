@@ -1,3 +1,9 @@
+// Seção 11: Aula 67 - Desafio - 
+
+/* 
+	- Desafio: Tratar a saída da função que calcula a média e retornar um número com apenas duas casas decimais.  
+    
+*/
 function calcularMedia(){                    
                     
     var total = 0;
@@ -9,5 +15,5 @@ function calcularMedia(){
         x++
     }                    
 
-    return total / qtd;
+    return (total / qtd).toFixed(2);
 }

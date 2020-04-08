@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">    
+
+        <script>
+
+            // Seção 11: Aula 68 - Desafio 
+
+            /* 
+                - Desafio: Tratar a saída da função que calcula a média e retornar um número com apenas duas casas decimais.  
+                
+            */
+
+            console.log('');
+            console.log("############## Aula 11, seção 68 - Desafio #######################");
+
+            (function(){
+
+                //Executará a função init só depois que toda a página carregar
+                window.addEventListener('load', init); 
+
+                function init(){
+                    var media = calcularMedia(2.5,4.2,6.85,8.1237);
+                    console.log("média: ", media);                    
+                }
+
+            })()        
+                        
+        </script>  
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+
+        </div>     
+        
+
+        <script src="js/beluga.js"></script>
+    </body>
+</html>
