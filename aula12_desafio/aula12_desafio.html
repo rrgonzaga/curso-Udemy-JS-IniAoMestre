@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        <style>
+
+            /*body {
+                background-image: url('images/1.jpg');
+                margin-top: 10px;
+            }*/
+
+        </style>       
+        
+    </head>
+    <body>
+        <h1>Curso Javascript Completo 2018</h1>
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <script src=beluga.js></script>
+        
+        <script>
+
+            // Seção 12: Aula 71 - Desafio - imagem de fundo randômica
+            /* 
+                - Carregar no corpo da página uma das cinco imagens da pasta images de forma randômica;  
+                - Dica: Toda a propriedade do mundo CSS com hifen corresponde a uma propriedade no 
+                mundo JS com a sintaxe camel case retirando o hifen. Ex.: No CSS: body {background-image: url('images/1.jpg')}. No JS: document.querySelector('body').style.backgroundImage = "url(images/1.jpg)";
+            */
+
+            console.log('');
+            console.log("############## Seção 12: Aula 71 - Desafio - imagem de fundo randômica #######################");
+
+            (function(){
+                
+                var n = sortear(5) + 1; 
+                //document.querySelector('body').style.backgroundColor = 'red';
+                document.querySelector('body').style.backgroundImage = "url(images/"+  n +".jpg)";               
+
+            })()
+        </script>      
+        
+    </body>
+</html>
