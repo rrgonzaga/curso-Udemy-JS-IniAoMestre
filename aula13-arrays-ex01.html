@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">    
+
+        <script>
+
+            // Seção 13: Aula 72 - Arrays - Métodos parte 1
+            /* 
+                - Testando a função every() do array onde permite fazer um teste com cada elemento do array onde todos os elementos precisam satisfazer uma condição para retornar true. 
+                - Testando a função some() do array onde permite fazer um teste com cada elemento do array onde pelo menos um elemento precisa satisfazer uma condição para retorna true. 
+                - Testando a função filter() do array onde permite fazer um teste com cada elemento do array onde a função retorna um novo Array apenas com os elementos que atenderam a uma condição. 
+                - Testando a função forEach() do array onde permite fazer uma iteraçao com cada elemento do array. Método muito usado para fazer loop sendo uma alternativa ao uso do loop for, while e 'do while'.
+                - Testando as funções indexOf e lastIndexOf de um array para retornar a posição de um determinado elemento no array. Caso o elemento a ser procurado/pesquisado não exista, as funções retornam -1.                
+            */
+
+            console.log('');
+            console.log("############## Seção 13: Aula 72 - Arrays - Métodos parte 1 #######################");
+
+            (function(){
+
+                //Executará a função init só depois que toda a página carregar
+                window.addEventListener('load', init); 
+
+                function init(){
+
+                    //var arr = new Array(0,2,3,'oi');
+                    //console.log("arr: ",arr);
+
+                    var arr = [1,2,3,4,5];
+
+                    //var onlyNumbers = arr.every(function(elem,index,obj){
+                        //console.log("elem: ", elem);
+                        //console.log("index: ", index);
+                        //console.log("obj: ", obj);
+                    
+                    //Exemplo função every                        
+                    var onlyNumbers = arr.every(function(elem){
+                        return typeof elem === 'number';
+                    });
+                    console.log("onlyNumbers: ", onlyNumbers);
+
+                    var arr2 = ['1',2,'3','4','5'];
+
+                    //Exemplo função some
+                    var atLeastOneNumber = arr2.some(function(elem){
+                        return typeof elem === 'number';
+                    });
+                    console.log("atLeastOneNumber: ", atLeastOneNumber);
+
+                    var arr3 = ['1',2,'3',4,'5',2,4];
+
+                    //Exemplo função filter
+                    var arrOnlyNumbers = arr3.filter(function(elem, index, arr){
+                        return typeof elem === 'number';
+                    });
+                    console.log("arrOnlyNumbers: ", arrOnlyNumbers);
+
+                    //Exemplo função forEach
+                    arr3.forEach(function(elem, index, arr) {
+                        console.log("elem: ", elem, ", index: ", index, ", array: ", arr.toString());
+                    });
+
+                    //Exemplo função indexOf
+                    //var positionElemStr3 = arr3.indexOf('3');
+                    //Procurar a partir do índice 2 inclusive.
+                    var positionElemStr3 = arr3.indexOf('3', 2);
+                    console.log("posição do elemento '3': ", positionElemStr3);
+
+                    //Exemplo função lastIndexOf
+                    //var positionLastElem2 = arr3.lastIndexOf(2);
+                    //console.log("posição do último elemento 2: ", positionLastElem2);
+                    var positionLastElem2 = arr3.lastIndexOf(2,4);
+                    //Procurar a partir do índice 4 inclusive.
+                    console.log("posição do último elemento 2: ", positionLastElem2);
+
+
+                                                  
+                }
+
+            })()        
+                        
+        </script>  
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+
+        </div>     
+        
+
+        <script src="js/beluga.js"></script>
+    </body>
+</html>
