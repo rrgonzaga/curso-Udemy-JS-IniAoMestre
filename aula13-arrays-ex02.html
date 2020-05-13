@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">    
+
+        <script>
+
+            // Seção 13: Aula 73 - Arrays - Métodos parte 2
+            /* 
+                - Testando o método map() do array onde permite fazer uma iteraçao com cada elemento do array para gerar um 
+                novo elemento, normalmente calculado a partir do elemento original, e o retorno deste método é um novo array com os novos elementos.
+                - Testando o método concat() do array para concatenar/juntar arrays. Além de concatenar arrays, podemos concatenar elementos fora do array. O retorno deste método é um novo array com 
+                todos os elementos passados por parâmetro. Ex.: arr.concat(numeros, arr2, 100, 200, 300);
+                - Testando o métdo join() do array que converte os elementos de um array em uma string. Semelhante ao método toString(). A diferença é que podemos passar por parâmetro um separador de elementos para o método join(). 
+                Exemplo: arr2.join(', '). Saída: 1, 2, 3, 4, 5                                
+            */
+
+            console.log('');
+            console.log("############## Seção 13: Aula 73 - Arrays - Métodos parte 2 #######################");
+
+            (function(){
+
+                //Executará a função init só depois que toda a página carregar
+                window.addEventListener('load', init); 
+
+                function init(){
+
+                    //var arr = new Array(0,2,3,'oi');
+                    //console.log("arr: ",arr);
+
+                    var arr = [1,2,3,4,5];     
+
+                    var arr2 = ['1',2,'3','4','5'];                   
+
+                    var arr3 = ['1',2,'3',4,'5',2 ,4];
+
+                    
+                    console.log("arr: ", arr);
+                    console.log("arr2: ", arr2);
+
+                    //Exemplo do método map
+                    // numeros = arr.map(function(elem, index, arr) {
+                    //     return elem * index;                        
+                    // });
+
+                    //Exemplo do método map
+                    numeros = arr.map(multiplyWith10); 
+
+                    function multiplyWith10(elem){
+                        return elem * 10;
+                    }
+
+                    console.log("map de numeros x 10: ", numeros);
+
+                    //Exemplo do método concat
+                    var arrConcatenated = arr.concat(numeros, arr2, 100, 200, 300);
+                    console.log("arr.concat(numeros, arr2, 100, 200, 300): ", arrConcatenated);
+
+                    var str = arr2.join(); // It's the same that var str = arr2.toString()                    
+                    console.log("arr2.join(): ", str);
+
+                    str = arr2.join(", ");
+                    console.log("arr2.join(', '): ", str);
+                                               
+                }
+
+            })()        
+                        
+        </script>  
+          
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Curso Javascript Completo 2018</h1>
+
+
+        </div>     
+        
+
+        <script src="js/beluga.js"></script>
+    </body>
+</html>
