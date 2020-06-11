@@ -22,3 +22,5 @@ Repositorio do curso de JavaScript - do iniciante ao Mestre da Udemy
 - Testando o método shift() onde permite excluir o primeiro item do array. Ex.: var primeiroItem = arr.shift(). Este método não gera um novo array, ou seja, altera diretamente o array original.
 - Testando o método unshift() onde permite acrescentar itens no início do array. Ex.: arr.shift(-2, -1, 0). Este método não gera um novo array, ou seja, altera diretamente o array original.
 
+-Teste
+
