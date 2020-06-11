@@ -84,14 +84,25 @@
 
         <script>
 
-        	 // Seção 13: Aula 78 - Spread Operator (ECMAscrit 2015, ECMAScript 6)
+        	 // Seção 13: Aula 79 - Arrow Functions (ECMAscrit 2015, ECMAScript 6)
             /* 
-                - Spread Operator (...): Com este operador, os parâmetros (elementos) que estão dentro do array são passados como argumentos para uma função. Cada elemento do array é como um argumento. 
-                Ex.: calcularMedia(...[2,9,9,3]) é o mesmo que calcularMedia(2,9,9,3). 
+                -  Arrow function: Um jeito mais simples de escrever funções. O símbolo => representa uma 
+                arrow function. Não preciso mais mencionar palavra function. 
+                Ex.:  var temNotaZero = notas.some((nota) => {
+                    	return nota === 0;
+                    });
+                - Caso eu tenha apenas um parâmetro para a função como o exemplo acima, posso retirar os 
+                parênteses do parâmetro. 
+                Ex.:  var temNotaZero = notas.some(nota => {
+                    	return nota === 0;
+                    });
+                - Caso eu tenha apenas uma linha de comando no corpo da função que retorna alguma coisa 
+                como no exemplo acima, posso retirar o comando return e as chaves do corpo da função. 
+                Ex.:  var temNotaZero = notas.some(nota => nota === 0);
             */
 
             console.log('');
-            console.log("############## Seção 13: Aula 78 - Spread Operator #######################");
+            console.log("############## Seção 13: Aula 79 - Arrow Functions #######################");
             
             (function(){
                 'use strict'
@@ -103,12 +114,13 @@
                     var tds = linhaAluno.querySelectorAll('td');
                     var notas = recuperarNumerosDeColunas(tds);  
 
-                    var temNotaZero = notas.some(function(nota){
-                    	return nota === 0;
-                    });
+                    // var temNotaZero = notas.some(function(nota){
+                    // 	return nota === 0;
+                    // });
 
-                    //Exemplo de Spread Operator
-                    //Ex.: calcularMedia(...[2,9,9,3]) é o mesmo que calcularMedia(2,9,9,3).
+                    //Exemplo de Arrow Function ( => )
+                    var temNotaZero = notas.some(nota => nota === 0);
+                    
                     var mensagem = temNotaZero ? 'reprovado' : calcularMedia(...notas);
 
                     linhaAluno.querySelector('.aluno-m').textContent = mensagem;

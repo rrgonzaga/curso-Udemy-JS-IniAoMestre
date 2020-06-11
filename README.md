@@ -34,11 +34,27 @@ Parâmetros: total: requerido (valor inicial ou valor retornado anteriormente da
 - Testando o método splice(), método bastante flexível onde permite acrescentar ou excluir qualquer elemento do array em qualquer posição. Retorna um novo array com os elementos excluídos e modifica o array original. 
 Exemplo: arr2.splice(2, 2, '3','4','5','6'). A partir da posição 2 (não inclusa), exclua dois elementos e acrescente os elementos '3','4','5','6' a partir da posição 2.
 
-# Seção 13: Aula 78 - Spread Operator
+# Seção 13: Aula 78 - Spread Operator (ECMAscrit 2015, ECMAScript 6)
 
 - Spread Operator (...): Com este operador, os parâmetros (elementos) que estão dentro do array são passados como 
 argumentos para uma função. Cada elemento do array é como um argumento. 
 Ex.: calcularMedia(...[2,9,9,3]) é o mesmo que calcularMedia(2,9,9,3). 
+
+# Seção 13: Aula 79 - Arrow Functions (ECMAscrit 2015, ECMAScript 6)
+
+-  Arrow function: Um jeito mais simples de escrever funções. O símbolo => representa uma 
+arrow function. Não preciso mais mencionar palavra function. 
+Ex.:  var temNotaZero = notas.some((nota) => {
+    	return nota === 0;
+    });
+- Caso eu tenha apenas um parâmetro para a função como o exemplo acima, posso retirar os 
+parênteses do parâmetro. 
+Ex.:  var temNotaZero = notas.some(nota => {
+    	return nota === 0;
+    });
+- Caso eu tenha apenas uma linha de comando no corpo da função que retorna alguma coisa 
+como no exemplo acima, posso retirar o comando return e as chaves do corpo da função. 
+Ex.:  var temNotaZero = notas.some(nota => nota === 0);	
 
 
 
