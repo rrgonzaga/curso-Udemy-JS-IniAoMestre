@@ -34,5 +34,11 @@ Parâmetros: total: requerido (valor inicial ou valor retornado anteriormente da
 - Testando o método splice(), método bastante flexível onde permite acrescentar ou excluir qualquer elemento do array em qualquer posição. Retorna um novo array com os elementos excluídos e modifica o array original. 
 Exemplo: arr2.splice(2, 2, '3','4','5','6'). A partir da posição 2 (não inclusa), exclua dois elementos e acrescente os elementos '3','4','5','6' a partir da posição 2.
 
+# Seção 13: Aula 78 - Spread Operator
+
+- Spread Operator (...): Com este operador, os parâmetros (elementos) que estão dentro do array são passados como 
+argumentos para uma função. Cada elemento do array é como um argumento. 
+Ex.: calcularMedia(...[2,9,9,3]) é o mesmo que calcularMedia(2,9,9,3). 
+
 
 

@@ -5,10 +5,10 @@
         <title>Curso Javascript Completo 2018</title>
         <meta charset="utf-8">
         
-        <link href="../css/bootstrap.css" rel="stylesheet">
-        <link href="../css/bootstrap-theme.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">
         
-        <script src="../js/beluga.js"></script>
+        <script src="js/beluga.js"></script>
 
     </head>
     <body>
@@ -84,14 +84,14 @@
 
         <script>
 
-        	 // Seção 13: Aula 77 - Problema - Reprovar aluno se tirou ao menos uma nota zero
+        	 // Seção 13: Aula 78 - Spread Operator
             /* 
-                - Mostrar se um aluno foi aprovado ou não utilizando a função calcularMedia(). Contudo, se houver 
-                pelo menos uma nota zero, reprovar automaticamente. 
+                - Spread Operator (...): Com este operador, os parâmetros (elementos) que estão dentro do array são passados como argumentos para uma função. Cada elemento do array é como um argumento. 
+                Ex.: calcularMedia(...[2,9,9,3]) é o mesmo que calcularMedia(2,9,9,3). 
             */
 
             console.log('');
-            console.log("############## Seção 13: Aula 77 - Problema - Reprovar aluno se tirou ao menos uma nota zero #######################");
+            console.log("############## Seção 13: Aula 78 - Spread Operator #######################");
             
             (function(){
                 'use strict'
@@ -107,9 +107,9 @@
                     	return nota === 0;
                     });
 
-                    //o método apply converte cada elemento do array em um argument
-                    //Ex.: calcularMedia.apply(this,[2,9,9,3]) é igual a calcularMedia(2,9,9,3);
-                    var mensagem = temNotaZero ? 'reprovado' : calcularMedia.apply(this, notas);
+                    //Exemplo de Spread Operator
+                    //Ex.: calcularMedia(...[2,9,9,3]) é o mesmo que calcularMedia(2,9,9,3).
+                    var mensagem = temNotaZero ? 'reprovado' : calcularMedia(...notas);
 
                     linhaAluno.querySelector('.aluno-m').textContent = mensagem;
 
