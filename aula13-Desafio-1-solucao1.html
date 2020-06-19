@@ -1,0 +1,59 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>
+
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum </p>
+
+        </div>
+
+        <script>
+
+        	 // Seção 13: Aula 80 - Mostrando somente 10 palavras
+            /* 
+                -  Selecionar todos os parágrafos da página e se tiver mais que 10 palavras, mostra apenas as 
+                10 primeiras seguido de reticências.
+            */
+
+            console.log('');
+            console.log("############## Seção 13: Aula 80 - Mostrando somente 10 palavras #######################");
+            
+            (function(){
+                'use strict'
+                var paragrafos = document.querySelectorAll("p");
+
+                var i = 0; 
+                while(paragrafos[i]){
+                    //console.log("paragrafo ", i + ": \n" + paragrafos[i].textContent);
+                    var palavras = paragrafos[i].textContent.split(" "); 
+                    if(palavras.length > 10) {
+                        paragrafos[i].innerHTML = palavras.slice(0,10).join(" ") + "...";
+                    }
+                    i++;
+                }
+                
+            })();
+            
+        </script>
+        
+    </body>
+</html>
