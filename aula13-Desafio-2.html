@@ -1,0 +1,79 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <style type="text/css">
+      .destaque {
+                padding: 15px;
+                display: inline-block;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+              }
+}
+    </style>
+
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>
+
+           <p class="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur JAVASCRIPT adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p>Lorem ipsum JAVASCRIPT dolor sit amet, consectetur adipisicing elit. Voluptatem dolores veniam perspiciatis vel cum reprehenderit tempora laudantium, harum aspernatur, neque consequuntur aperiam, optio consectetur. Consectetur quod iure perspiciatis commodi eligendi!</p>
+           <p class="p10">Lorem ipsum </p>
+
+        </div>
+
+        <script>
+
+        	 // Seção 13: Aula 81/82 - Destacando parágrafo que contém a palavra JavaScript
+            /* 
+                -  Selecionar todos os parágrafos da página e adicionar uma classe de destaque no parágrafo que 
+                contém a palavra JavaScript.
+                - Podemos usar o método className ou o método classList.add('nome da classe CSS'). Usando tanto o método classList.add() quanto o className, o html original não é alterado incluindo a classe. A principal diferença entre os dois métodos é que o className substitui as classes que existiam pela class atribuida. Já o classList.add() acrescenta a classe sem substituir as que já existiam. 
+            */
+
+            console.log('');
+            console.log("############## Seção 13: Aula 81/82 - Destacando parágrafo que contém a palavra JavaScript #######################");
+            
+            (function(){
+                'use strict'
+                var paragrafos = document.querySelectorAll("p");
+
+                for(var i = 0; i < paragrafos.length; i++){
+                  //Poderia também usar a propriedade textContent para passar o conteúdo do parágrafo.
+                  //paragrafos[i].textContent
+                  if(temPalavraJavascript(paragrafos[i].innerHTML)) {
+                    paragrafos[i].classList.add("destaque");
+                    //paragrafos[i].className = "mystyle";
+
+                  }
+
+                  
+                }
+
+                function temPalavraJavascript(paragrafo) {
+                  var palavrasParagrafo = paragrafo.toLowerCase().split(" ");
+                  return palavrasParagrafo.indexOf("javascript") >= 0 ? true : false;
+                }
+            
+                
+            })();
+            
+        </script>
+        
+    </body>
+</html>
