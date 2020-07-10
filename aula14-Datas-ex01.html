@@ -1,0 +1,94 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <style type="text/css">
+      .destaque {
+                padding: 15px;
+                display: inline-block;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+              }
+}
+    </style>
+
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>           
+
+        </div>
+
+        <script>
+
+        	 // Seção 14: Aula 83 - Métodos do objeto construtor Date
+            /* 
+                - O objeto do tipo Date sempre precisa ser instanciado; 
+                - Método getDay(): Retorna um número (tipo number) que representa o dia da semana, sendo 0 para domingo, 1 para segunda e assim sucessivamente. 
+                - Método getDate(): Retorna um número (tipo number) que representa o dia da data. 
+                - Método getMonth(): Retorna um número (tipo number) que representa o mês da data sendo 0 para Janeiro, 1 para fevereiro e assim sucessivamente. 
+                - Método getYear(): Retorna um número que representa a diferença do ano da data menos 1900, ou seja, retorna o  número de anos que se passaram após o ano de 1900 até o ano da data em questão. 
+                - Método getFullYear(): Retorna um número que representa o ano da data. 
+                - Método getHours(): Retorna um número (tipo number) que representa as horas da data.
+                - Método getMinutes(): Retorna um número (tipo number) que representa os minutos da data.
+                - Método getSeconds(): Retorna um número (tipo number) que representa os segundos da data.
+                - Método getTime(): Retorna um número que representa o timeStamp da diferença da data utilizada menos a data de 1º de Janeiro de 1970. Podemos considerar este método para gerar números exclusivos, ou seja, que não se repetem. Um outro comando javaScript que podemos usar para gerar um timeStamp é: +new Date();
+                - Método setTime(<< num. milessegundos >>). Método usado para definir em um objeto Date uma data/hora específica através de sua representação em milissegundos. 
+                - Método setDate(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido o dia através do valor passado por parâmetro.
+                - Método setMonth(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido o mês através do valor passado por parâmetro.
+                - Método setYear(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido o ano através do valor passado por parâmetro.
+                - Método setHours(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinida as horas através do valor passado por parâmetro.
+                - Método setMinutes(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido os minutos através do valor passado por parâmetro.
+                - Método setMilliseconds(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido os segundos através do valor passado por parâmetro.
+                - Método new Date(<<yyyy, MM, dd>>): Retorna um objeto do tipo Date criado a partir do ano, mês e dia passados por parâmetro. Ex.: new Date(1976,6,12). 
+                - Método new Date(<<yyyy, MM, dd, hh, mm, ss>>): Retorna um objeto do tipo Date criado a partir do ano, mês, dia, hora, minuto e segundo passados por parâmetro. Ex.: new Date(1976, 6, 12, 15, 45, 5). 
+            */
+
+            console.log('');
+            console.log("############## Seção 14: Aula 83 - Métodos do objeto Date #######################");
+            
+            (function(){
+                'use strict'
+                var minhaData = new Date();
+                var dataNascimento = new Date();
+
+                console.log("minhaData;\n >", minhaData);
+                console.log("minhaData.getDay();\n >", minhaData.getDay());
+                console.log("minhaData.getDate();\n >", minhaData.getDate());
+                console.log("minhaData.getMonth();\n >", minhaData.getMonth());
+                console.log("minhaData.getYear();\n >", minhaData.getYear());
+                console.log("minhaData.getFullYear();\n >", minhaData.getFullYear());
+                console.log("minhaData.getHours();\n >", minhaData.getHours());
+                console.log("minhaData.getMinutes();\n >", minhaData.getMinutes());
+                console.log("minhaData.getSeconds();\n >", minhaData.getSeconds());
+                console.log("minhaData.getTime();\n >", minhaData.getTime());                
+                console.log("minhaData.setTime(1594347546169);\n >", minhaData.setTime(1594347546169));   
+                console.log("minhaData;\n >", minhaData);          
+                console.log("minhaData.setDate(9);\n >", minhaData.setDate(9));          
+                console.log("minhaData.setMonth(6);\n >", minhaData.setMonth(6));          
+                console.log("minhaData.setYear(2020);\n >", minhaData.setYear(2020));     
+                console.log("minhaData;\n >", minhaData);     
+                console.log("minhaData.setHours(0);\n >", minhaData.setHours(0));          
+                console.log("minhaData.setMinutes(0);\n >", minhaData.setMinutes(0));          
+                console.log("minhaData.setMilliseconds(-6000);\n >", minhaData.setMilliseconds(-6000)); 
+                console.log("minhaData;\n >", minhaData);
+                console.log("minhaData = new Date(0);\n >", minhaData = new Date(0));
+                console.log("dataNascimento = new Date(1976,6,12);\n >", dataNascimento = new Date(1976,6,12));
+                console.log("dataNascimento = new Date(1976, 6, 12, 15, 45, 5, 500);\n >", dataNascimento = new Date(1976,6,12,15,45,5,500));
+                console.log("dataNascimento.getMilliseconds();\n >", dataNascimento.getMilliseconds());
+
+            
+                
+            })();
+            
+        </script>
+        
+    </body>
+</html>

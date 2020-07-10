@@ -56,5 +56,24 @@ Ex.:  var temNotaZero = notas.some(nota => {
 como no exemplo acima, posso retirar o comando return e as chaves do corpo da função. 
 Ex.:  var temNotaZero = notas.some(nota => nota === 0);	
 
+# Seção 14: Aula 83 - Métodos do objeto construtor Date
 
-
+- O objeto do tipo Date sempre precisa ser instanciado; 
+- Método getDay(): Retorna um número (tipo number) que representa o dia da semana, sendo 0 para domingo, 1 para segunda e assim sucessivamente. 
+- Método getDate(): Retorna um número (tipo number) que representa o dia da data. 
+- Método getMonth(): Retorna um número (tipo number) que representa o mês da data sendo 0 para Janeiro, 1 para fevereiro e assim sucessivamente. 
+- Método getYear(): Retorna um número que representa a diferença do ano da data menos 1900, ou seja, retorna o  número de anos que se passaram após o ano de 1900 até o ano da data em questão. 
+- Método getFullYear(): Retorna um número que representa o ano da data. 
+- Método getHours(): Retorna um número (tipo number) que representa as horas da data.
+- Método getMinutes(): Retorna um número (tipo number) que representa os minutos da data.
+- Método getSeconds(): Retorna um número (tipo number) que representa os segundos da data.
+- Método getTime(): Retorna um número que representa o timeStamp da diferença da data utilizada menos a data de 1º de Janeiro de 1970. Podemos considerar este método para gerar números exclusivos, ou seja, que não se repetem. Um outro comando javaScript que podemos usar para gerar um timeStamp é: +new Date();
+- Método setTime(<< num. milessegundos >>). Método usado para definir em um objeto Date uma data/hora específica através de sua representação em milissegundos. 
+- Método setDate(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido o dia através do valor passado por parâmetro.
+- Método setMonth(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido o mês através do valor passado por parâmetro.
+- Método setYear(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido o ano através do valor passado por parâmetro.
+- Método setHours(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinida as horas através do valor passado por parâmetro.
+- Método setMinutes(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido os minutos através do valor passado por parâmetro.
+- Método setMilliseconds(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido os segundos através do valor passado por parâmetro.
+- Método new Date(<<yyyy, MM, dd>>): Retorna um objeto do tipo Date criado a partir do ano, mês e dia passados por parâmetro. Ex.: new Date(1976,6,12). 
+- Método new Date(<<yyyy, MM, dd, hh, mm, ss>>): Retorna um objeto do tipo Date criado a partir do ano, mês, dia, hora, minuto e segundo passados por parâmetro. Ex.: new Date(1976, 6, 12, 15, 45, 5).
