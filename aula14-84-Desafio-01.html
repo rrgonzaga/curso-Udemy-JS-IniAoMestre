@@ -1,0 +1,114 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <style type="text/css">
+      .destaque {
+                padding: 15px;
+                display: inline-block;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+              }
+}
+    </style>
+
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>           
+
+        </div>
+
+        <script>
+
+        	 // Seção 14: Aula 84 - Contagem regressiva para o meu aniversário
+            /* 
+                - Fazer uma página que mostra quantos dias faltam para o seu próximo aniversário ou 
+                mostra mensagem de parabéns.
+                - Solução: Definir a data do meu próximo aniversário. Após isso, obter a diferença em dias fazendo
+                data do meu próximo aniversário - data atual.  
+            */
+
+            console.log('');
+            console.log("############## Seção 14: Aula 84 - Contagem regressiva para o meu aniversário #######################");
+
+            (function(){
+                'use strict'
+                var dataAtual = new Date();
+                dataAtual.setHours(0);
+                dataAtual.setMinutes(0);
+                dataAtual.setSeconds(0);
+                dataAtual.setMilliseconds(0); 
+
+                var anoAtual = dataAtual.getFullYear();
+                var dataProximoAniversario = new Date(anoAtual,6,12);
+
+                var timeStampDataAtual = dataAtual.getTime();                
+                var timeStampDataProximoAniversario = dataProximoAniversario.getTime();   
+
+                const TIME_STAMP_UM_DIA = 86400000 // 24*60*60*1000 = 86400000
+
+                //debugger;
+
+                if(timeStampDataAtual > timeStampDataProximoAniversario) {
+                    //dataProximoAniversario.setFullYear(anoAtual + 1);
+                    dataProximoAniversario.setFullYear(++anoAtual);
+                    timeStampDataProximoAniversario = dataProximoAniversario.getTime(); 
+                }
+
+                if(timeStampDataAtual === timeStampDataProximoAniversario) {
+                    console.log("Parabéns! hoje é seu aniversário"); 
+                    alert("Parabéns! Hoje é o seu aniversário. ");
+                    return;
+                } 
+
+                var timeStampDiferencaEntreDatas = timeStampDataProximoAniversario - timeStampDataAtual; 
+                var diasProximoAniversario = timeStampDiferencaEntreDatas/TIME_STAMP_UM_DIA;
+                console.log("A data do seu próximo aniversário é", dataProximoAniversario);
+                console.log("Falta(m)", diasProximoAniversario + " dia(s) para o seu próximo aniversário");
+
+            })();
+            
+            /*(function(){
+                'use strict'
+                var minhaData = new Date();
+                var dataNascimento = new Date();
+
+                console.log("minhaData;\n >", minhaData);
+                console.log("minhaData.getDay();\n >", minhaData.getDay());
+                console.log("minhaData.getDate();\n >", minhaData.getDate());
+                console.log("minhaData.getMonth();\n >", minhaData.getMonth());
+                console.log("minhaData.getYear();\n >", minhaData.getYear());
+                console.log("minhaData.getFullYear();\n >", minhaData.getFullYear());
+                console.log("minhaData.getHours();\n >", minhaData.getHours());
+                console.log("minhaData.getMinutes();\n >", minhaData.getMinutes());
+                console.log("minhaData.getSeconds();\n >", minhaData.getSeconds());
+                console.log("minhaData.getTime();\n >", minhaData.getTime());                
+                console.log("minhaData.setTime(1594347546169);\n >", minhaData.setTime(1594347546169));   
+                console.log("minhaData;\n >", minhaData);          
+                console.log("minhaData.setDate(9);\n >", minhaData.setDate(9));          
+                console.log("minhaData.setMonth(6);\n >", minhaData.setMonth(6));          
+                console.log("minhaData.setYear(2020);\n >", minhaData.setYear(2020));     
+                console.log("minhaData;\n >", minhaData);     
+                console.log("minhaData.setHours(0);\n >", minhaData.setHours(0));          
+                console.log("minhaData.setMinutes(0);\n >", minhaData.setMinutes(0));          
+                console.log("minhaData.setMilliseconds(-6000);\n >", minhaData.setMilliseconds(-6000)); 
+                console.log("minhaData;\n >", minhaData);
+                console.log("minhaData = new Date(0);\n >", minhaData = new Date(0));
+                console.log("dataNascimento = new Date(1976,6,12);\n >", dataNascimento = new Date(1976,6,12));
+                console.log("dataNascimento = new Date(1976, 6, 12, 15, 45, 5, 500);\n >", dataNascimento = new Date(1976,6,12,15,45,5,500));
+                console.log("dataNascimento.getMilliseconds();\n >", dataNascimento.getMilliseconds());            
+                
+            })();*/
+            
+        </script>
+        
+    </body>
+</html>
