@@ -1,0 +1,76 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <style type="text/css">
+      .destaque {
+                padding: 15px;
+                display: inline-block;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+              }
+}
+    </style>
+
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>           
+
+        </div>
+
+        <script>
+
+        	 // Seção 15: Aula 87 - Temporizadores 01             
+            /* 
+                -ATENÇÃO! O JavaScript é single thread, ou seja, somente um processo por vez é executado. O código principal e os temporizadores são executados em uma única thread, seguindo a ordem da fila de processos a serem executados, um processo de cada vez. 
+
+                - Métodos temporizadores servem para executar funções JS depois de um certo tempo, ou seja, servem para adiar ou programar execuções de função JS de tempo em tempos.                 
+                - Estes métodos não são nativos da ECMAScript, ou seja, eles só estão disponíveis nos browsers "pendurados" em window. Não estão disponíveis, por exemplo, no nodeJs. 
+                - setTimeout(func, ms): Executa uma função depois de um determinado tempo de espera definido em ms. 
+                - setInverval(func, ms): Executa uma função e repete a execução desta função de acordo com um determinado tempo em ms até que seja excluída esta execução com o método clearInterval. 
+                - clearTimeout(func, ms): Limpa/exclui o agendamento da execução de uma determinada função definida com setTimeout. 
+                - clearInverval(func, ms): Limpa/exclui o agendamento da execução de uma determinada função definida com setInterval. 
+
+            */
+
+            console.log('');
+            console.log("############## Seção 15: Aula 87 - Temporizadores 01 #######################");
+
+            (function(){
+                'use strict'
+
+                var n = 0;
+
+                function somaUm() {
+
+                    n = ++n;
+                    console.log("n:", n);
+
+                    if(n === 10) {
+                        clearInterval(idIntervalo);
+                    }                   
+                    
+                }
+
+                var idTimeout = setTimeout(somaUm,1000);
+                console.log("idTimeout:",idTimeout);
+
+                var idIntervalo = setInterval(somaUm,1000);
+                console.log("idIntervalo:",idIntervalo);
+                
+
+            })();            
+            
+            
+        </script>
+        
+    </body>
+</html>

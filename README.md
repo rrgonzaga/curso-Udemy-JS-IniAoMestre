@@ -77,3 +77,13 @@ Ex.:  var temNotaZero = notas.some(nota => nota === 0);
 - Método setMilliseconds(<<num.>>): Retorna um número timeStamp que representa um data que foi redefinido os segundos através do valor passado por parâmetro.
 - Método new Date(<<yyyy, MM, dd>>): Retorna um objeto do tipo Date criado a partir do ano, mês e dia passados por parâmetro. Ex.: new Date(1976,6,12). 
 - Método new Date(<<yyyy, MM, dd, hh, mm, ss>>): Retorna um objeto do tipo Date criado a partir do ano, mês, dia, hora, minuto e segundo passados por parâmetro. Ex.: new Date(1976, 6, 12, 15, 45, 5).
+
+# Seção 15: Aula 87 - Temporizadores 
+-ATENÇÃO! O JavaScript é single thread, ou seja, somente um processo por vez é executado. O código principal e os temporizadores são executados em uma única thread, seguindo a ordem da fila de processos a serem executados, um processo de cada vez.
+
+- Métodos temporizadores servem para executar funções JS depois de um certo tempo, ou seja, servem para adiar ou programar execuções de função JS de tempo em tempos.                 
+- Estes métodos não são nativos da ECMAScript, ou seja, eles só estão disponíveis nos browsers "pendurados" em window. Não estão disponíveis, por exemplo, no nodeJs. 
+- setTimeout(func, ms): Executa uma função depois de um determinado tempo de espera definido em ms. 
+- setInverval(func, ms): Executa uma função e repete a execução desta função de acordo com um determinado tempo em ms até que seja excluída esta execução com o método clearInterval. 
+- clearTimeout(func, ms): Limpa/exclui o agendamento da execução de uma determinada função definida com setTimeout. 
+- clearInverval(func, ms): Limpa/exclui o agendamento da execução de uma determinada função definida com setInterval. 
