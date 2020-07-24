@@ -28,51 +28,49 @@
 
         <script>
 
-        	 // Seção 14: Aula 84 - Contagem regressiva para o meu aniversário
+        	 // Seção 14: Aula 85 - Função que retorna data no formato DD/MM/AAAA
             /* 
-                - Fazer uma página que mostra quantos dias faltam para o seu próximo aniversário ou 
-                mostra mensagem de parabéns.
-                - Solução: Definir a data do meu próximo aniversário. Após isso, obter a diferença em dias fazendo
-                data do meu próximo aniversário - data atual.  
+                - Criar uma função que retorne uma data formatada no padrão brasileiro: DD/MM/AAAA.
             */
 
             console.log('');
-            console.log("############## Seção 14: Aula 84 - Contagem regressiva para o meu aniversário #######################");
+            console.log("############## Seção 14: Aula 85 - Função que retorna data no formato DD/MM/AAAA #######################");
 
             (function(){
                 'use strict'
+                //var dataAtual = new Date(1976,6,12);
                 var dataAtual = new Date();
                 dataAtual.setHours(0);
                 dataAtual.setMinutes(0);
                 dataAtual.setSeconds(0);
                 dataAtual.setMilliseconds(0); 
 
-                var anoAtual = dataAtual.getFullYear();
-                var dataProximoAniversario = new Date(anoAtual,0,10);
+                dataAtual.setDate(3);
+                dataAtual.setMonth(7); //0 - Jan; 1 - Fev; 2 - Mar; ... 7 - Ago.
 
-                var timeStampDataAtual = dataAtual.getTime();                
-                var timeStampDataProximoAniversario = dataProximoAniversario.getTime();   
+                console.log("Data atual: \n", dataAtual);
 
-                const TIME_STAMP_UM_DIA = 86400000 // 24*60*60*1000 = 86400000
+                var dataFormatada = obterDataFormatadaPadraoBr(dataAtual);
+                console.log("dataFormatada: ", dataFormatada);
 
-                //debugger;
+                function obterDataFormatadaPadraoBr(data) {
+                    var dia = data.getDate();
+                    //var diaF = dia.toString().length === 1 ? "0"+dia : dia.toString();
+                    var diaF = dia < 10 ? "0" + dia : dia.toString();
 
-                if(timeStampDataAtual > timeStampDataProximoAniversario) {
-                    //dataProximoAniversario.setFullYear(anoAtual + 1);
-                    dataProximoAniversario.setFullYear(++anoAtual);
-                    timeStampDataProximoAniversario = dataProximoAniversario.getTime(); 
+                    console.log("data.getDate();\n >", diaF);
+                    
+                    var mes = data.getMonth() + 1; 
+                    //var mesF = mes.toString().length === 1 ? "0"+mes : mes.toString();
+                    var mesF = mes < 10 ? "0" + mes : mes.toString();
+                    
+                    console.log("data.getMonth() + 1;\n >", mesF);
+
+                    var anoF = data.getFullYear().toString();
+                    console.log("data.getFullYear();\n >", anoF);
+
+                    return diaF.concat("/",mesF).concat("/",anoF);
                 }
-
-                if(timeStampDataAtual === timeStampDataProximoAniversario) {
-                    console.log("Parabéns! hoje é seu aniversário"); 
-                    alert("Parabéns! Hoje é o seu aniversário. ");
-                    return;
-                } 
-
-                var timeStampDiferencaEntreDatas = timeStampDataProximoAniversario - timeStampDataAtual; 
-                var diasProximoAniversario = timeStampDiferencaEntreDatas/TIME_STAMP_UM_DIA;
-                console.log("A data do seu próximo aniversário é", dataProximoAniversario);
-                console.log("Falta(m)", diasProximoAniversario + " dia(s) para o seu próximo aniversário");
 
             })();
             
