@@ -81,9 +81,9 @@ Ex.:  var temNotaZero = notas.some(nota => nota === 0);
 # Seção 15: Aula 87 - Temporizadores 
 -ATENÇÃO! O JavaScript é single thread, ou seja, somente um processo por vez é executado. O código principal e os temporizadores são executados em uma única thread, seguindo a ordem da fila de processos a serem executados, um processo de cada vez.
 
-- Métodos temporizadores servem para executar funções JS depois de um certo tempo, ou seja, servem para adiar ou programar execuções de função JS de tempo em tempos.                 
+- Métodos temporizadores servem para executar funções JS depois de um certo tempo, ou seja, servem para adiar ou programar execuções de função JS de tempos em tempos.                 
 - Estes métodos não são nativos da ECMAScript, ou seja, eles só estão disponíveis nos browsers "pendurados" em window. Não estão disponíveis, por exemplo, no nodeJs. 
 - setTimeout(func, ms): Executa uma função depois de um determinado tempo de espera definido em ms. 
-- setInverval(func, ms): Executa uma função e repete a execução desta função de acordo com um determinado tempo em ms até que seja excluída esta execução com o método clearInterval. 
+- setInterval(func, ms): Executa uma função e repete a execução desta função de acordo com um determinado tempo em ms até que seja excluída esta execução com o método clearInterval. 
 - clearTimeout(func, ms): Limpa/exclui o agendamento da execução de uma determinada função definida com setTimeout. 
-- clearInverval(func, ms): Limpa/exclui o agendamento da execução de uma determinada função definida com setInterval. 
+- clearInterval(func, ms): Limpa/exclui o agendamento da execução de uma determinada função definida com setInterval. 

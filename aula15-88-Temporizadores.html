@@ -1,0 +1,95 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <style type="text/css">
+        .destaque {
+                padding: 15px;
+                display: inline-block;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+              }
+
+        .banner{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
+                display: none;
+            }
+
+        .banner__close{
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+}
+    </style>
+
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>
+                <div class="banner">
+                    <h2>Banner Irritante</h2>
+                    <button class="banner__close">X</button>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi debitis autem, consectetur, explicabo quisquam voluptatibus nobis quaerat repellat nam, ad vel similique doloremque, doloribus labore quasi provident. Excepturi, odit, velit.</p>
+                </div>
+        </div>
+
+        <script>
+
+        	 // Seção 15: Aula 88 - Temporizadores - banner popup             
+            /* 
+                - Problema: O cliente pediu para fazer um pop-up bem irritante que pula na interface do usuário depois de 5 segundos. Este mesmo pop-up deve ser fechado automaticamente após 5 segundos (mesmo que o usuário ainda esteja lendo. Lembre-se, a ideia é que seja extremamente irritante). 
+            */
+
+            console.log('');
+            console.log("############## Seção 15: Aula 88 - Temporizadores - banner popup #######################");
+
+            (function(){
+                'use strict'
+
+                var $banner = document.querySelector('.banner');
+                var $bannerBtn = document.querySelector('.banner__close');
+
+                $bannerBtn.addEventListener('click',escondeBanner);
+
+                var intervaloEsconde = null;
+
+                function mostraBanner(){
+                    $banner.style.display = 'block';
+                    intervaloEsconde = setTimeout(escondeBanner,5000);
+                }
+
+                function escondeBanner(){
+                    //Removendo o escutador de evento click
+                    $bannerBtn.removeEventListener('click', escondeBanner);
+
+                    //Removendo o banner do DOM
+                    $banner.parentNode.removeChild($banner);
+
+                    //Limpando a programação do temporizador definido na função mostraBanner
+                    clearTimeout(intervaloEsconde);
+                }
+
+                setTimeout(mostraBanner,5000);
+                
+
+            })();            
+            
+            
+        </script>
+        
+    </body>
+</html>
