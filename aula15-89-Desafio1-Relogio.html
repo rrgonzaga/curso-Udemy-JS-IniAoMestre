@@ -1,0 +1,88 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <style type="text/css">
+        .destaque {
+                padding: 15px;
+                display: inline-block;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+              }
+
+        .banner{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
+                display: none;
+            }
+
+        .banner__close{
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+}
+    </style>
+
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>
+           <h4>Relógio</h4>
+           <div id="relogio"></div>
+        </div>
+
+        <script>
+
+        	 // Seção 15: Aula 89 - Desafio 1 - Relógio             
+            /* 
+                - Desafio: Criar uma função a hora atual no formato hh:mm:ss. Mostre este texto numa div qualquer na 
+                tela. Execute essa função a cada 1 segundo.  
+            */
+
+            console.log('');
+            console.log("############## Seção 15: Aula 89 - Desafio 1 - Relógio #######################");
+
+            (function(){
+                //'use strict';
+                var $divRelogio = document.getElementById('relogio');  
+
+                function mostraHoraAtual() {
+
+                    var dataHoraAtual = new Date();
+                    var horaAtual = dataHoraAtual.getHours();
+                    var minutoAtual = dataHoraAtual.getMinutes();
+                    var segundoAtual = dataHoraAtual.getSeconds();
+
+                    if(horaAtual < 10)
+                        horaAtual = '0'+ horaAtual;
+
+                    if(minutoAtual < 10) {
+                        minutoAtual = '0'+ minutoAtual;
+                    }
+
+                    if(segundoAtual < 10) {
+                        segundoAtual = '0' + segundoAtual;
+                    }
+
+                    $divRelogio.innerHTML = horaAtual + ":" + minutoAtual + ":" + segundoAtual;
+                }
+
+                setInterval(mostraHoraAtual,1000);
+
+            })();
+            
+        </script>
+        
+    </body>
+</html>
