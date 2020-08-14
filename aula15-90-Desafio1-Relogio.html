@@ -1,0 +1,91 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <style type="text/css">
+        .destaque {
+                padding: 15px;
+                display: inline-block;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+              }
+
+        .banner{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
+                display: none;
+            }
+
+        .banner__close{
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+}
+    </style>
+
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>
+           <h4>Relógio</h4>
+           <div id="relogio"></div>
+        </div>
+
+        <script>
+
+        	 // Seção 15: Aula 90 - Desafio 1 - Relógio (versão 2)             
+            /* 
+                - Desafio: Criar uma função a hora atual no formato hh:mm:ss. Mostre este texto numa div qualquer na 
+                tela. Execute essa função a cada 1 segundo.  
+            */
+
+            console.log('');
+            console.log("############## Seção 15: Aula 90 - Desafio 1 - Relógio #######################");
+
+            (function(){
+                //'use strict';
+                //var $divRelogio = document.getElementById('relogio');
+                var $divRelogio = document.querySelector('#relogio');
+
+                function horaAtual() {
+
+                    var dataHoraAtual = new Date();
+                    var hora = formataNumeroDoisDigitos(dataHoraAtual.getHours());
+                    var minuto = formataNumeroDoisDigitos(dataHoraAtual.getMinutes());
+                    var segundo = formataNumeroDoisDigitos(dataHoraAtual.getSeconds());
+
+                    return hora + ":" + minuto + ":" + segundo;
+                }
+
+                function formataNumeroDoisDigitos(numero){
+                    return numero < 10 ? '0' + numero : numero;
+                }
+
+                function mostraRelogio(){
+                    $divRelogio.textContent = horaAtual();
+                    //$divRelogio.innerHTML = horaAtual();
+                }
+
+                setInterval(mostraRelogio,1000);
+
+                /*setInterval(function(){
+                    mostraRelogio();
+                },1000);*/
+
+            })();
+            
+        </script>
+        
+    </body>
+</html>
