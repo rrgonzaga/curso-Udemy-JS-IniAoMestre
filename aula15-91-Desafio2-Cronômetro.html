@@ -1,0 +1,109 @@
+<!doctype html>
+<!doctype html>
+<html>
+    <head>
+        <title>Curso Javascript Completo 2018</title>
+        <meta charset="utf-8">
+        
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/bootstrap-theme.css" rel="stylesheet">        
+
+    </head>
+    <style type="text/css">
+        .destaque {
+                padding: 15px;
+                display: inline-block;
+                background-color: coral;
+                color: white;
+                font-size: 25px;
+              }
+
+        .banner{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                box-shadow: 0 0 0 1000px rgba(0,0,0,.8);
+                display: none;
+            }
+
+        .banner__close{
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                }
+}
+    </style>
+
+    <body>
+        <div class="container">
+           <h1>Curso Javascript Completo 2018</h1>
+           <h4>Cronômetro</h4>
+           <div>
+               <input type="text" id="cronometro"/>
+           </div>
+           <br/>
+           <div>
+               <button id="iniciar">Iniciar</button>
+               <button id="pausar">Pausar</button>
+               <button id="parar">Parar</button>
+           </div>
+        </div>
+
+        <script>
+
+        	 // Seção 15: Aula 91 - Desafio 2 - Cronômetro             
+            /* 
+                - Desafio 2: Mostrar cronômetro. Fazer uma interface contendo um input text e três botões. Ao clicar no primeiro deve iniciar um cronômetro. O segundo deve pausar ou continuar. O terceiro deve resetar o cronômetro.   
+            */
+
+            console.log('');
+            console.log("############## Seção 15: Aula 91 - Desafio 2 - Cronômetro #######################");
+
+            (function(){
+
+                console.log("obtendo o timeStamp da data/hora atual");
+                console.log("new Date().getTime() > ", new Date().getTime());
+                console.log("Date.now() > ", Date.now());
+
+                var $cronometro = document.querySelector('#cronometro'); 
+                var $iniciar = document.querySelector('#iniciar');
+                var $pausar = document.querySelector("#pausar"); 
+                var $parar = document.querySelector("#parar");
+
+                var x=0; 
+
+                $iniciar.addEventListener("click",iniciar);
+                $pausar.addEventListener("click",pausar);
+                $parar.addEventListener("click",parar);     
+
+                var timeStampClickIniciar = 0;           
+
+                function iniciar() {
+                    timeStampClickIniciar = Date.now();
+                    iniciarCronometro();                     
+                }
+
+                function pausar(){
+
+                }
+
+                function parar() {
+
+                }
+
+                function iniciarCronometro(){
+                    setInterval(function(){
+                        var timeStampAgora = Date.now();
+                        var diferenca = timeStampAgora - timeStampClickIniciar;
+                        $cronometro.value = diferenca; 
+
+                    },100);
+                }                    
+
+            })();            
+            
+        </script>
+        
+    </body>
+</html>
