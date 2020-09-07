@@ -77,29 +77,84 @@
                 $pausar.addEventListener("click",pausar);
                 $parar.addEventListener("click",parar);     
 
-                var timeStampClickIniciar = 0;           
+                var intervalo = null;
+                var timeStampClickIniciar = 0;  
+                var timeStampClickPausar = 0;       
+                var timeStampTempoDecorrido = 0;
+                var rodando = false;  
 
                 function iniciar() {
+                    if(rodando) return;
                     timeStampClickIniciar = Date.now();
-                    iniciarCronometro();                     
+                    timeStampClickPausar = 0;  
+                    timeStampTempoDecorrido = 0;
+                    iniciarCronometro();  
+                    rodando = true;                    
                 }
 
                 function pausar(){
+                    if(!$cronometro.value) return;
+                    
+                    if(rodando){
+                        clearInterval(intervalo);
+                        timeStampClickPausar = Date.now();
+                        timeStampTempoDecorrido += (timeStampClickPausar - timeStampClickIniciar);
+                        rodando = false;
+                    } else {
+                        timeStampClickIniciar = Date.now();
+                        iniciarCronometro(timeStampTempoDecorrido);
+                        rodando = true;
+                    }
 
                 }
 
                 function parar() {
-
+                    timeStampClickIniciar = 0;  
+                    timeStampClickPausar = 0;  
+                    timeStampTempoDecorrido = 0;
+                    rodando = false; 
+                    clearInterval(intervalo);
+                    $cronometro.value = "";
                 }
 
-                function iniciarCronometro(){
-                    setInterval(function(){
+                function iniciarCronometro(tempoDecorrido){
+                    var _ms = tempoDecorrido || 0; 
+                    intervalo = setInterval(function(){
                         var timeStampAgora = Date.now();
                         var diferenca = timeStampAgora - timeStampClickIniciar;
-                        $cronometro.value = diferenca; 
+                        $cronometro.value = formataMs(diferenca + _ms); 
 
                     },100);
-                }                    
+                }
+
+                function formataMs(ms){
+                    /*
+                    ms = 900 -> 900;
+                    ms = 1500 -> 1:500;
+                    ms = 59000 -> 59:000;
+                    ms = 61500 -> 1:1:500; 
+                    */
+
+                    const MINUTO = 60 * 1000; 
+
+                    var msFormatado; 
+
+                    if(ms < 1000) {
+                        msFormatado = ms;
+                    } else if (ms < MINUTO) {
+                        //Obtendo os segundos 
+                        var segundos = parseInt(ms/1000);
+                        //Obtendo os centézimos
+                        var centezimos = ms - (segundos * 1000); 
+                        msFormatado = segundos + ":" + centezimos;
+                    } else {
+                        //Obtendo os minutos
+                        var minutos = parseInt(ms/MINUTO);  // 1.025 -> 1
+                        msFormatado = minutos + ":" + formataMs(ms - minutos * MINUTO);
+                    }
+
+                    return msFormatado; 
+                }
 
             })();            
             
