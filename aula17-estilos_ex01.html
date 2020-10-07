@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Logica de Programação Javascript</title>
+        <meta charset="utf-8">
+        
+        <style type="text/css">
+            .teste {
+                background: red;
+            }
+
+
+	   </style>
+        
+    </head>
+    <body>
+
+        <h1>Curso Javascript Completo 2018</h1> 
+       
+        <!-- <div class="teste">Apenas um teste</div> -->
+        <div class="teste" style="background: green;">Apenas um teste</div> 
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et purus elit. Sed imperdiet leo odio, ac bibendum massa ornare et. Praesent tristique urna elementum varius convallis. Integer vitae tincidunt magna, non lobortis risus. Praesent vel magna sodales, pharetra neque lobortis, lacinia diam. Sed dictum nisi eu diam iaculis semper. Phasellus pretium risus lorem, quis eleifend odio ultricies vel. Suspendisse volutpat velit sit amet convallis feugiat. Phasellus ut tempus ipsum. Nulla et nisl eget nulla blandit suscipit vitae at risus. Morbi nec lobortis tortor. Nunc mauris tortor, bibendum vel dictum elementum, ornare et dolor.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et purus elit. Sed imperdiet leo odio, ac bibendum massa ornare et. Praesent tristique urna elementum varius convallis. Integer vitae tincidunt magna, non lobortis risus. Praesent vel magna sodales, pharetra neque lobortis, lacinia diam. Sed dictum nisi eu diam iaculis semper. Phasellus pretium risus lorem, quis eleifend odio ultricies vel. Suspendisse volutpat velit sit amet convallis feugiat. Phasellus ut tempus ipsum. Nulla et nisl eget nulla blandit suscipit vitae at risus. Morbi nec lobortis tortor. Nunc mauris tortor, bibendum vel dictum elementum, ornare et dolor.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et purus elit. Sed imperdiet leo odio, ac bibendum massa ornare et. Praesent tristique urna elementum varius convallis. Integer vitae tincidunt magna, non lobortis risus. Praesent vel magna sodales, pharetra neque lobortis, lacinia diam. Sed dictum nisi eu diam iaculis semper. Phasellus pretium risus lorem, quis eleifend odio ultricies vel. Suspendisse volutpat velit sit amet convallis feugiat. Phasellus ut tempus ipsum. Nulla et nisl eget nulla blandit suscipit vitae at risus. Morbi nec lobortis tortor. Nunc mauris tortor, bibendum vel dictum elementum, ornare et dolor.
+        </p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et purus elit. Sed imperdiet leo odio, ac bibendum massa ornare et. Praesent tristique urna elementum varius convallis. Integer vitae tincidunt magna, non lobortis risus. Praesent vel magna sodales, pharetra neque lobortis, lacinia diam. Sed dictum nisi eu diam iaculis semper. Phasellus pretium risus lorem, quis eleifend odio ultricies vel. Suspendisse volutpat velit sit amet convallis feugiat. Phasellus ut tempus ipsum. Nulla et nisl eget nulla blandit suscipit vitae at risus. Morbi nec lobortis tortor. Nunc mauris tortor, bibendum vel dictum elementum, ornare et dolor.
+        </p>
+
+        <div class="teste2">Teste 2</div> 
+        
+        
+        <script>
+
+            // Seção 37: Estilização - Aula 351 - Recuperar propriedades visuais            
+            /* 
+                - A propriedade style de um elemento só funciona para definir ou recuperar estilos inline.
+                - Tamanho e posição de um elemento em relação ao documento (objeto document).
+                - Tamanho e posição de um elemento em relação à viewport (área do documento que pode ser visualizada).
+
+            */
+
+            console.log('');
+            console.log("############## Seção 37: Aula 351. Recuperar propriedades visuais #######################");
+
+            var $teste = document.querySelector(".teste");
+            //A propriedade style de um elemento só funciona para definir ou recuperar estilos inline
+            console.log("$teste.style.background: ", $teste.style.background);
+            console.log("getComputedStyle($teste): ", getComputedStyle($teste));
+            console.log("getComputedStyle($teste).background: ", getComputedStyle($teste).background);
+            var $p = document.querySelector("p");
+            console.log("getComputedStyle($p): ", getComputedStyle($p));
+            //Tamanho e posição de um elemento em relação ao documento. OBS.: Usando o scroll, o valor não muda.
+            console.log("$p.offsetHeight: ", $p.offsetHeight);
+            console.log("$p.offsetWidth: ", $p.offsetWidth);
+            console.log("$p.offsetLeft: ", $p.offsetLeft);
+            console.log("$p.offsetTop: ", $p.offsetTop);
+
+            var $teste2 = document.querySelector(".teste2");
+            console.log("$teste2.offsetLeft: ", $teste2.offsetLeft);
+            console.log("$teste2.offsetTop: ", $teste2.offsetTop);
+
+            //Tamanho e posição de um elemento em relação à viewport e não ao documento. OBS.: Usando o scroll, o valor muda.
+            console.log("$teste2.getBoundingClientRect(): ", $teste2.getBoundingClientRect());   
+
+            
+
+        </script>
+    </body>
+</html>
