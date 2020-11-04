@@ -107,7 +107,7 @@
         
     <script type="text/javascript">
         
-        // Seção 37: Estilização - Aula 352 - Mostrar link ativo em uma single page            
+        // Seção 39: Estilização - Aula 391 - Mostrar link ativo em uma single page (Continuação)            
         /* 
             - Em uma página long scrolling de navegação interna, identificar (destacar) no menu principal (fixo no topo da página) a seção atual enquanto o usuário scrolla a pagina.
         */
@@ -119,6 +119,8 @@
 
             window.addEventListener("scroll", destacaMenu);
 
+            destacaMenu();
+
             function destacaMenu() {
 
                 var positions = [];
@@ -127,14 +129,13 @@
                 }
 
                 console.log("positions: ", positions);
-
-                var linkAtual = pegaUltimoLinkVisivel(positions);
+                
                 var linkAtivo = $menu.querySelector('.actived');
-
                 if(linkAtivo) {
                     linkAtivo.classList.remove('actived');
                 }
-                
+
+                var linkAtual = pegaUltimoLinkVisivel(positions);                
                 linkAtual.classList.add('actived');
                 
             }
@@ -148,9 +149,10 @@
             function pegaUltimoLinkVisivel(positions) {
                 //Percorrer o array de trás para frente. 
                 var qtd = positions.length;
+                var metadeTela = innerHeight/2;
                 while(qtd) {
                     qtd--;
-                    if(positions[qtd] < 0){
+                    if(positions[qtd] < metadeTela){
                         return $links[qtd];
                     }
                 }
@@ -158,9 +160,6 @@
             }
 
         })();
-
-
-
 
     </script>    
         
