@@ -119,6 +119,8 @@
                 }
 
                 function mostrarBanner(bannerAtual){
+
+                    limpaIntervalo();
                     
                     setupNav(bannerAtual);
 
@@ -142,8 +144,33 @@
                     */
 
                     atualizaLiPaginacao(bannerAtual);
+
+                    iniciaIntervalo();
                     
-                }                
+                }
+
+                var intervalo = null;
+
+                function iniciaIntervalo() {                    
+
+                    intervalo = setInterval(function(){
+                        
+                        bannerAtual++;
+
+                        if(bannerAtual === qtdeBanners)
+                            bannerAtual = 0;
+
+                        mostrarBanner(bannerAtual);
+
+                    }, 5000);
+                }
+
+                function limpaIntervalo() {
+                    clearInterval(intervalo);
+                }
+
+                iniciaIntervalo();            
+
 
             })()
         
