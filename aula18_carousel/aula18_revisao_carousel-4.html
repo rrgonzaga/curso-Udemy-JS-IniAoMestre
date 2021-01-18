@@ -53,6 +53,8 @@
                 $btnPrev.addEventListener('click', showPrev);
                 $btnNext.addEventListener('click', showNext);
 
+                setupNav(bannerAtual);
+
                 montaPaginacao();
 
                 function montaPaginacao(){
@@ -83,9 +85,9 @@
                 }
 
                 function showPrev() {
+                    
                     bannerAtual--;
                     mostrarBanner(bannerAtual);
-
                 }
 
                 function showNext(){
@@ -130,9 +132,9 @@
                     largura = parseInt(largura);
 
                     //console.log("largura: ",largura);
-                    //console.log("typeof(largura)",typeof(largura));
+                    //console.log("typeof(largura)",typeof(largura));                    
 
-                    var novaPosicao = largura * bannerAtual * -1;
+                    var novaPosicao = bannerAtual === 0 ? 0 : largura * bannerAtual * -1;
                     console.log("novaPosicao: ", novaPosicao);
                     $carouselInner.style.transform = 'translateX(' + novaPosicao + 'px)';
 
